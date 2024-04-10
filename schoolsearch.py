@@ -1,6 +1,22 @@
 import os
 import time
 
+def validiateLines(data):
+    if len(data) != 8:
+        print("Invalid data format")
+        exit()
+    if not data[2].isdigit():
+        print("Invalid grade level")
+        exit()
+    if not data[4].isdigit():
+        print("Invalid bus route")
+        exit()
+    try :
+        float(data[5])
+    except ValueError:
+        print("Invalid GPA")
+        exit()
+
 def parseFile():
     # data schema: last_name, first_name, grade, classroom, bus, GPA, teacher_last_name, teacher_first_name
     # the last_name dictionary will store the last name as the key and all the infomation stored for students with that last name
@@ -16,6 +32,8 @@ def parseFile():
         for line in file:
             data = line.split(',')
             data[-1] = data[-1].strip()
+
+            validiateLines(data)
 
             if data[0] in last_name:
                 last_name[data[0]].append(data)
