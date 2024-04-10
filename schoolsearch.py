@@ -1,6 +1,8 @@
 import os
 import time
 
+STUDENT_FILE = "students.txt"
+
 def validiateLines(data):
     if len(data) != 8:
         print("Invalid data format")
@@ -21,7 +23,7 @@ def validiateLines(data):
         exit()
     
 
-def parseFile():
+def parseFile(filename):
     # data schema: last_name, first_name, grade, classroom, bus, GPA, teacher_last_name, teacher_first_name
     # the last_name dictionary will store the last name as the key and all the infomation stored for students with that last name
     last_name = {}
@@ -32,7 +34,7 @@ def parseFile():
     # students_in_grade will store the grade as the key and all the students in that grade
     students_in_grade = {}
 
-    with open("students.txt", 'r') as file:
+    with open(filename, 'r') as file:
         for line in file:
             data = line.split(',')
             data[-1] = data[-1].strip()
@@ -197,7 +199,7 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
         
 
 def main():
-    lastNameDict, classRosterDict, busRouteDict, gradeLevelDict = parseFile()
+    lastNameDict, classRosterDict, busRouteDict, gradeLevelDict = parseFile(STUDENT_FILE)
     
     parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict)
 
