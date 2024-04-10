@@ -199,6 +199,10 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
         
 
 def main():
+    if os.path.exists(STUDENT_FILE) == False:
+        print("File does not exist")
+        exit()
+
     lastNameDict, classRosterDict, busRouteDict, gradeLevelDict = parseFile(STUDENT_FILE)
     
     parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict)
