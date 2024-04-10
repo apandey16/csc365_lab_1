@@ -1,0 +1,94 @@
+------------------ TC-1 -------------------
+Student found!
+Student name: BOBBIE HAVIR
+Grade Level: 2
+Classroom: 108
+Teacher: GAVIN HAMER
+------------------ TC-2 -------------------
+No student with that last name found or invalid command
+------------------ TC-3 -------------------
+Student found!
+Student name: BOBBIE HAVIR
+Bus route: 0
+------------------ TC-4 -------------------
+Invalid command! Please try again!
+------------------ TC-5 -------------------
+Teacher found!
+Teacher name: PERLA CHIONCHIO
+Students in class: 
+1. DEEDRA WORBINGTON
+2. KENDRA SPANICEK
+3. CODI GUICE
+4. HUNG GLOR
+5. NOAH GUM
+6. ROLLAND NOVICK
+7. KRYSTAL DELUNA
+8. ZANDRA COMO
+------------------ TC-6 -------------------
+No teacher with that last name found or invalid command
+------------------ TC-7 -------------------
+Students in grade 3: 
+1. XUAN COOKUS
+2. SHANTE ELHADDAD
+3. HYE BRODERSEN
+4. SHARRI SWEDLUND
+5. MANIE CIGANEK
+6. TOMAS COVINGTON
+7. TORY EARLY
+8. LELA LINHART
+9. GRACE THEUNISSEN
+------------------ TC-8 -------------------
+No students in that grade level or invalid command
+------------------ TC-9 -------------------
+Bus route found!
+Students on bus route 0: 
+1. PHUONG SCHOENECKER, Grade: 6, Classroom: 109
+2. MATHILDA FINCHMAN, Grade: 6, Classroom: 111
+3. HYE BRODERSEN, Grade: 3, Classroom: 110
+4. BOBBIE HAVIR, Grade: 2, Classroom: 108
+5. ELDON MASSART, Grade: 4, Classroom: 105
+6. JOHN GARTH, Grade: 1, Classroom: 103
+7. RANDOLPH CREMEANS, Grade: 6, Classroom: 109
+8. CARRIE KREESE, Grade: 6, Classroom: 109
+------------------ TC-10 -------------------
+No bus route with that number found or invalid command
+------------------ TC-11 -------------------
+Student with the highest GPA in grade 3 is SHARRI SWEDLUND, GPA: 3.24
+------------------ TC-12 -------------------
+Student with the lowest GPA in grade 3 is MANIE CIGANEK, GPA: 2.79
+------------------ TC-13 -------------------
+No students in that grade level or invalid command
+------------------ TC-14 -------------------
+Average GPA for students is grade 3 is 3.05
+------------------ TC-15 -------------------
+No students in that grade level or invalid command
+------------------ TC-16 -------------------
+Number of students in each grade level: 
+Grade 1: 2
+Grade 2: 13
+Grade 3: 9
+Grade 4: 15
+Grade 5: 0
+Grade 6: 21
+------------------ TC-17 -------------------
+Exiting program
+------------------ TC-E1 -------------------
+Invalid command! Please try again!
+------------------ TC-E2 -------------------
+Invalid command! Please try again!
+------------------ TC-E3 -------------------
+File does not exist
+------------------ TC-E4 -------------------
+Invalid data format
+------------------ TC-E5 -------------------
+Invalid grade level
+------------------ TC-E6 -------------------
+Invalid bus route
+------------------ TC-E7 -------------------
+Invalid GPA
+------------------ TC-E8 -------------------
+Invalid bus route number
+------------------ TC-E9 -------------------
+Invalid grade level
+------------------ TC-E10 -------------------
+Invalid grade level

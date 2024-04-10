@@ -1,0 +1,242 @@
+// CSC 365
+// Lab 1-a Tests Suite
+
+// TC-1
+// Tests Requirements R3, R4
+// short form command name, existing student
+// expected output: 
+// "Student found!
+//  Student name: BOBBIE HAVIR
+//  Grade Level: 2
+//  Classroom: 108
+//  Teacher: GAVIN HAMER"
+
+S HAVIR
+
+// TC-2
+// Tests Requirements R3, R4
+// short form command name, non-existing student
+// expected output: "No student with that last name found or invalid command"
+
+S ANSH
+
+// TC-3
+// Tests Requirements R3, R5
+// short form command name, existing student with bus
+// expected output: 
+// "Student found!
+//  Student name: BOBBIE HAVIR
+//  Bus route: 0"
+
+S HAVIR B
+
+// TC-4
+// Tests Requirements R3, R5
+// short form command name, non-existing student with bus
+// expected output: "No student with that last name found or invalid command"
+
+S RYANGOSLING B 
+
+// TC-5
+// Tests Requirements R3, R6
+// short form command name, existing teacher
+// expected output: 
+// "Teacher found!
+//  Teacher name: PERLA CHIONCHIO
+//  Students in class: 
+//  1. DEEDRA WORBINGTON
+//  2. KENDRA SPANICEK
+//  3. CODI GUICE
+//  4. HUNG GLOR
+//  5. NOAH GUM
+//  6. ROLLAND NOVICK
+//  7. KRYSTAL DELUNA
+//  8. ZANDRA COMO"
+
+T CHIONCHIO
+
+// TC-6
+// Tests Requirements R3, R6
+// short form command name, non-existing teacher
+// expected output: "No teacher with that last name found or invalid command"
+
+T MIGLER
+
+// TC-7
+// Tests Requirements R3, R7
+// short form command name, Grade Simple
+// expected output: 
+// "Students in grade 3: 
+//  1. XUAN COOKUS
+//  2. SHANTE ELHADDAD
+//  3. HYE BRODERSEN
+//  4. SHARRI SWEDLUND
+//  5. MANIE CIGANEK
+//  6. TOMAS COVINGTON
+//  7. TORY EARLY
+//  8. LELA LINHART
+//  9. GRACE THEUNISSEN"
+
+G 3
+
+// TC-8
+// Tests Requirements R3, R7
+// short form command name, No Students In Grade
+// expected output: "No students in that grade level or invalid command"
+
+G 6
+
+// TC-9
+// Tests Requirements R3, R4
+// short form command name, Bus exists
+// expected output: 
+// "Bus route found!
+//  Students on bus route 0: 
+//  1. PHUONG SCHOENECKER, Grade: 6, Classroom: 109
+//  2. MATHILDA FINCHMAN, Grade: 6, Classroom: 111
+//  3. HYE BRODERSEN, Grade: 3, Classroom: 110
+//  4. BOBBIE HAVIR, Grade: 2, Classroom: 108
+//  5. ELDON MASSART, Grade: 4, Classroom: 105
+//  6. JOHN GARTH, Grade: 1, Classroom: 103
+//  7. RANDOLPH CREMEANS, Grade: 6, Classroom: 109
+//  8. CARRIE KREESE, Grade: 6, Classroom: 109"
+
+B 0
+
+// TC-10
+// Tests Requirements R3, R8
+// short form command name, Bus exists
+// expected output: "No bus route with that number found or invalid command"
+
+B 8675309
+
+// TC-11
+// Tests Requirements R3, R9
+// short form command name, Highest GPA Grade 3
+// expected output: "Student with the highest GPA in grade 3is SHARRI SWEDLUND, GPA: 3.24"
+
+G 3 H
+
+// TC-12
+// Tests Requirements R3, R9
+// short form command name, Lowest GPA Grade 3
+// expected output: "Student with the lowest GPA in grade 3is MANIE CIGANEK, GPA: 2.79"
+
+G 3 L
+
+// TC-12
+// Tests Requirements R3, R9
+// short form command name, Highest GPA no student
+// expected output: "No students in that grade level or invalid command"
+
+G 5 H
+
+// TC-13
+// Tests Requirements R3, R10
+// short form command name, Average GPA 3
+// expected output: "Average GPA for students is grade 3 is 3.05"
+
+A 3
+
+// TC-14
+// Tests Requirements R3, R10
+// short form command name, Average GPA no students in class
+// expected output: "No students in that grade level or invalid command"
+
+A 5
+
+// TC-15
+// Tests Requirements R3, R11
+// Info command
+// expected output:
+// "Number of students in each grade level: 
+//  Grade 1: 2
+//  Grade 2: 13
+//  Grade 3: 9
+//  Grade 4: 15
+//  Grade 5: 0
+//  Grade 6: 21"
+
+I
+
+// TC-16
+// Tests Requirements R3, R12
+// Quit command
+// expected output: "Exiting program"
+
+Q
+
+// EXCEPTIONS
+
+// TC-E1
+// Tests Requirements E1, R3
+// Invalid input
+// expected output: "Invalid command! Please try again!"
+
+F: FAIL
+
+// TC-E2
+// Tests Requirements E1, R3
+// Lowercase input
+// expected output: "Invalid command! Please try again!"
+
+s: HAVIR
+
+// TC-E3
+// Tests Requirements E1, R13
+// missing students.txt
+// expected output: ""
+
+Run command with deleted students.txt
+
+// TC-E4
+// Tests Requirements E1
+// invalid students.txt file
+// expected output: "Invalid data format"
+
+Replace students.txt with students1.txt and run command
+
+// TC-E5
+// Tests Requirements E1
+// invalid students.txt file
+// expected output: "Invalid grade level"
+
+Replace students.txt with students2.txt and run command
+
+// TC-E6
+// Tests Requirements E1
+// invalid students.txt file
+// expected output: "Invalid bus route"
+
+Replace students.txt with students3.txt and run command
+
+// TC-E7
+// Tests Requirement E1
+// invalid students.txt file
+// expected output: "Invalid GPA"
+
+Replace students.txt with students4.txt and run command
+
+// Note we chose not to limit names to only characters, as with a recent
+// increase in creativity in naming, some names include digits now: See Elon Musk's Child or 50 Cent (Whose child will likely be named 25 Cent)
+
+// TC-E8
+// Tests Requirement E1
+// invalid input bus
+// expected output: "Invalid bus route number"
+
+B -
+
+// TC-E9
+// Tests Requirement E1
+// invalid input grade
+// expected output: "Invalid grade level"
+
+G -
+
+// TC-E10
+// Tests Requirement E1
+// invalid input average
+// expected output: "Invalid grade level"
+
+A -
