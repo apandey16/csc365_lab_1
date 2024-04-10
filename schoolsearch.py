@@ -127,16 +127,19 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
                 print("No teacher with that last name found or invalid command")
         
         elif user_input[0] == 'B' and len(user_input) == 2:
-            if int(user_input[1]) in busRouteDict:
-                print("\nBus route found!")
-                studentLst = busRouteDict[int(user_input[1])]
-                print("Students on bus route " + user_input[1] + ": ")
-                i = 1
-                for student in studentLst:
-                    print(str(i) + ". " + student[1] + " " + student[0] + ", Grade: " + student[2] + ", Classroom: " + student[3])
-                    i += 1
-            else:
-                print("No bus route with that number found or invalid command")
+            try: 
+                if int(user_input[1]) in busRouteDict:
+                    print("\nBus route found!")
+                    studentLst = busRouteDict[int(user_input[1])]
+                    print("Students on bus route " + user_input[1] + ": ")
+                    i = 1
+                    for student in studentLst:
+                        print(str(i) + ". " + student[1] + " " + student[0] + ", Grade: " + student[2] + ", Classroom: " + student[3])
+                        i += 1
+                else:
+                    print("No bus route with that number found or invalid command")
+            except ValueError:
+                print("Invalid bus route number")
 
         elif user_input[0] == 'A' and len(user_input) == 2:
             if int(user_input[1]) in gradeLevelDict:
@@ -150,26 +153,29 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
                 print("No students in that grade level or invalid command")
 
         elif user_input[0] == 'G' and len(user_input) > 1 and len(user_input) < 4:
-            gradeLevel = int(user_input[1])
-            if gradeLevel in gradeLevelDict:
-                studentLst = gradeLevelDict[gradeLevel]
-                
-                if len(user_input) == 2:
-                    print("\nStudents in grade " + user_input[1] + ": ")
-                    i = 1
-                    for student in studentLst:
-                        print(str(i) + ". " + student[1] + " " + student[0])    
-                        i += 1
-                else:
-                    studentLst.sort(key=lambda x: x[5], reverse=True)
-                    if user_input[2] == 'H':
-                        print("\nStudent with the highest GPA in grade " + user_input[1] + "is " + studentLst[0][1] + " " + studentLst[0][0] + ", GPA: " + studentLst[0][5] )
-                    elif user_input[2] == 'L':
-                        print("\nStudent with the lowest GPA in grade " + user_input[1] + "is " + studentLst[-1][1] + " " + studentLst[-1][0] + ", GPA: " + studentLst[-1][5])
+            try:
+                gradeLevel = int(user_input[1])
+                if gradeLevel in gradeLevelDict:
+                    studentLst = gradeLevelDict[gradeLevel]
+                    
+                    if len(user_input) == 2:
+                        print("\nStudents in grade " + user_input[1] + ": ")
+                        i = 1
+                        for student in studentLst:
+                            print(str(i) + ". " + student[1] + " " + student[0])    
+                            i += 1
                     else:
-                        print("Invalid command")
-            else:
-                print("No students in that grade level or invalid command")
+                        studentLst.sort(key=lambda x: x[5], reverse=True)
+                        if user_input[2] == 'H':
+                            print("\nStudent with the highest GPA in grade " + user_input[1] + "is " + studentLst[0][1] + " " + studentLst[0][0] + ", GPA: " + studentLst[0][5] )
+                        elif user_input[2] == 'L':
+                            print("\nStudent with the lowest GPA in grade " + user_input[1] + "is " + studentLst[-1][1] + " " + studentLst[-1][0] + ", GPA: " + studentLst[-1][5])
+                        else:
+                            print("Invalid command")
+                else:
+                    print("No students in that grade level or invalid command")
+            except ValueError:
+                print("Invalid grade level")
 
         elif user_input[0] == 'I' and len(user_input) == 1:
             print("\nNumber of students in each grade level: ")
