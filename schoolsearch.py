@@ -169,7 +169,7 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
                         if user_input[2] == 'H':
                             print("\nStudent with the highest GPA in grade " + user_input[1] + "is " + studentLst[0][1] + " " + studentLst[0][0] + ", GPA: " + studentLst[0][5] )
                         elif user_input[2] == 'L':
-                            print("\nStudent with the lowest GPA in grade " + user_input[1] + "is " + studentLst[-1][1] + " " + studentLst[-1][0] + ", GPA: " + studentLst[-1][5])
+                            print("\nStudent with the lowest GPA in grade " + user_input[1] + " is " + studentLst[-1][1] + " " + studentLst[-1][0] + ", GPA: " + studentLst[-1][5])
                         else:
                             print("Invalid command")
                 else:
