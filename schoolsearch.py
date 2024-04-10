@@ -142,15 +142,18 @@ def parseUserInput(lastNameDict, classRosterDict, busRouteDict, gradeLevelDict):
                 print("Invalid bus route number")
 
         elif user_input[0] == 'A' and len(user_input) == 2:
-            if int(user_input[1]) in gradeLevelDict:
-                studentLst = gradeLevelDict[int(user_input[1])]
-                totalGPA = 0
-                for student in studentLst:
-                    totalGPA += float(student[5])
-                avgGPA = totalGPA / len(studentLst)
-                print("Average GPA for students is grade " + user_input[1] + " is " + str(round(avgGPA, 2)))
-            else:
-                print("No students in that grade level or invalid command")
+            try:
+                if int(user_input[1]) in gradeLevelDict:
+                    studentLst = gradeLevelDict[int(user_input[1])]
+                    totalGPA = 0
+                    for student in studentLst:
+                        totalGPA += float(student[5])
+                    avgGPA = totalGPA / len(studentLst)
+                    print("Average GPA for students is grade " + user_input[1] + " is " + str(round(avgGPA, 2)))
+                else:
+                    print("No students in that grade level or invalid command")
+            except ValueError:
+                print("Invalid grade level")
 
         elif user_input[0] == 'G' and len(user_input) > 1 and len(user_input) < 4:
             try:
