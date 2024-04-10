@@ -11,11 +11,15 @@ def validiateLines(data):
     if not data[4].isdigit():
         print("Invalid bus route")
         exit()
+    if type(data[0]) != str or type(data[1]) != str or type(data[6]) != str or type(data[7]) != str:
+        print("Invalid data format")
+        exit()
     try :
         float(data[5])
     except ValueError:
         print("Invalid GPA")
         exit()
+    
 
 def parseFile():
     # data schema: last_name, first_name, grade, classroom, bus, GPA, teacher_last_name, teacher_first_name
